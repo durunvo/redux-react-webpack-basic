@@ -4,8 +4,8 @@
   "description": "Isomorphic Redux React",
   "main": "bin/www.js",
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "start": "webpack && NODE_ENV=production node ./bin/www",
+    "dev": "NODE_ENV=development node ./bin/www"
   },
   "keywords": [
     "react",

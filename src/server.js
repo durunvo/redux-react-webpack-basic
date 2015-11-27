@@ -20,20 +20,20 @@ const env = process.env.NODE_ENV || 'development';
 
 
 //webpack for create bundle.js for client
-let config;
 if(env === 'development'){
-  //webpack will generate bundle.js faster in dev config
-  config = require('../webpack.dev.config.js');
-}else{
-  //webpack will generate bundle.js slower in dev config
-  config = require('../webpack.prod.config.js');
+  //webpack will generate bundle.js faster in dev configlet config;
+
+  console.log('asdasd');
+  let config = require('../webpack.dev.config.js');
+  const compiler = webpack(config);
+  app.use(webpackDevMiddleware(compiler, {
+    noInfo: true,
+    publicPath: config.output.publicPath
+  }));
+  app.use(webpackHotMiddleware(compiler));
 }
-const compiler = webpack(config);
-app.use(webpackDevMiddleware(compiler, {
-  noInfo: true,
-  publicPath: config.output.publicPath
-}));
-app.use(webpackHotMiddleware(compiler));
+
+app.use('/static', Express.static(__dirname + '/../dist'));
 
 app.use((req, res)=>{
 
@@ -55,7 +55,7 @@ app.use((req, res)=>{
         </Provider>
       );
 
-      let html = <Html assets={{}} store={store} component={component} />;
+      let html = <Html store={store} component={component} />;
       res.status(200).send('<!DOCTYPE HTML>\n' + renderToString(html));
 
     } else {
