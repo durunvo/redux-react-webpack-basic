@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import ReduxStore from './stores/ReduxStore';
 import {Provider} from 'react-redux';
 import {reduxReactRouter, ReduxRouter} from 'redux-router';
-import AppRoute from 'routes/AppRoute';
+import AppRoute from './routes/AppRoute';
 import createHistory from 'history/lib/createBrowserHistory';
 
 const store = ReduxStore('client', window.__data);
