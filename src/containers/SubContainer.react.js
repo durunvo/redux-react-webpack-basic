@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import SubHeader from '../component/Sub/SubHeader.react';
+import SubHeader from '../components/Sub/SubHeader.react';
 import { Link } from 'react-router';
 
 class SubContainer extends Component {

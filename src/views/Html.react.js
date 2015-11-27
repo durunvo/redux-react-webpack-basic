@@ -3,11 +3,11 @@ import ReactDOM, {renderToString} from 'react-dom/server';
 import serialize from 'serialize-javascript';
 
 /**
- * Wrapper component containing HTML metadata and boilerplate tags.
+ * Wrapper components containing HTML metadata and boilerplate tags.
  * Used in server-side code only to wrap the string output of the
- * rendered route component.
+ * rendered routes components.
  *
- * The only thing this component doesn't (and can't) include is the
+ * The only thing this components doesn't (and can't) include is the
  * HTML doctype declaration, which is added to the rendered output
  * by the server.js file.
  */

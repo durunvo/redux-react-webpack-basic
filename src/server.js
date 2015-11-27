@@ -2,12 +2,12 @@ import Express from 'express';
 import React from 'react';
 import path from 'path';
 import {renderToString} from 'react-dom/server';
-import Html from './view/Html.react';
-import ReduxStore from './store/ReduxStore';
+import Html from 'views/Html.react';
+import ReduxStore from './stores/ReduxStore';
 import {ReduxRouter} from 'redux-router';
 import {reduxReactRouter, match} from 'redux-router/server';
 import {Provider} from 'react-redux';
-import AppRoute from './route/AppRoute';
+import AppRoute from 'routes/AppRoute';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
@@ -23,7 +23,6 @@ const env = process.env.NODE_ENV || 'development';
 if(env === 'development'){
   //webpack will generate bundle.js faster in dev configlet config;
 
-  console.log('asdasd');
   let config = require('../webpack.dev.config.js');
   const compiler = webpack(config);
   app.use(webpackDevMiddleware(compiler, {

@@ -1,11 +1,11 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import reducer from '../reducer/index';
+import reducer from '../reducers/index';
 import {reduxReactRouter as clientRouter} from 'redux-router';
 import {reduxReactRouter as serverRouter} from 'redux-router/server';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 import createMemoryHistory from 'history/lib/createMemoryHistory';
-import routes from '../route/AppRoute';
+import routes from '../routes/AppRoute';
 
 export default function (target, initialState = {}) {
 

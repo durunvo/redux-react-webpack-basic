@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import MainHeader from '../component/Main/MainHeader.react';
-import {loadAndSuccess, loadAndFail} from '../reducer/load';
+import MainHeader from '../components/Main/MainHeader.react';
+import {loadAndSuccess, loadAndFail} from '../reducers/load';
 
 class MainContainer extends Component {
 
